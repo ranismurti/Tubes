@@ -7,7 +7,7 @@ void menu(list_child &LC, list_parent &LP, list_relasi &LR)
     {
         cout<<endl;
         cout<<"  1)Masukan Data"<<endl<<endl;
-        cout<<"  2)Daftarkan Pasen ke Dokter"<<endl<<endl;
+        cout<<"  2)Daftarkan Pasien ke Dokter"<<endl<<endl;
         cout<<"  3)Tampil Data"<<endl<<endl;
         cout<<"  3)Keluar"<<endl<<endl;
         cout<<"  > PILIH : ";
@@ -55,7 +55,7 @@ void insert_child(list_child &LC)
 {
     dokter D;
     address_child C;
-    address_child prec;
+    address_child CC;
     cout<<endl<<"  INPUT DATA DOKTER"<<endl<<endl;
     cout<<"  > Nama Dokter : ";
     cin>>D.nama;
@@ -74,7 +74,8 @@ void insert_child(list_child &LC)
     cout<<endl;
 
     C = alokasi(D);
-    prec = first(LC);
+    insertFirst(LC,C);
+    cout<<info(first(LC)).id;
 }
 
 void insert_parent(list_parent &LP)
@@ -103,6 +104,8 @@ void insert_parent(list_parent &LP)
 
 
     Q = alokasi(P);
+    insertFirst(LP,Q);
+    cout<<info(first(LP)).id;
 }
 
 void insertRelasi(list_relasi &LR,list_child LC,list_parent LP)
@@ -112,16 +115,19 @@ void insertRelasi(list_relasi &LR,list_child LC,list_parent LP)
     address_child C;
     address_parent P;
     address_relasi R;
+    cout<<info(first(LC)).id;
+    cout<<info(first(LP)).id;
     cout<<"  1)Masukan No.KTP pasien    : ";
     cin>>x.id;
     cout<<"  2)Masukan ID Dokter        : ";
     cin>>y.id;
-    C=findByID(LC,y);
-    P=findByID(LP,x);
-    if (C!=NULL && P !=NULL)
+    C = findByID(LC,y);
+    P = findByID(LP,x);
+    if (C != NULL && P !=NULL)
     {
-        R=alokasi(P,C);
+        R = alokasi(P,C);
         insertFirst(LR,R);
     }
+    cout<<info(child(first(LR))).id;
 
 }

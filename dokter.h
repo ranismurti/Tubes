@@ -38,4 +38,6 @@ address_child alokasi(infotype_child x);
 void dealokasi(address_child &P);
 address_child findByID(list_child L, infotype_child x);
 
+void insert_ascending(list_child &LC, address_child P);
+
 #endif // DOKTER_H_INCLUDED

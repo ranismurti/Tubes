@@ -69,7 +69,7 @@ address_parent findByID(list_parent L, infotype_parent x)
     }
     else
     {
-        while (P != NULL && info(P).id != x.id)
+        while (next(P) != NULL && info(P).id != x.id)
         {
             P = next(P);
         }
@@ -132,7 +132,7 @@ void deleteAfter(list_parent &L, address_parent Prec, address_parent &P)
 void insertAfter(list_parent &L,address_parent Prec,address_parent &P)
 {
     if (next(Prec) == NULL){
-        insertLast(L,P)
+        insertLast(L,P);
     }
     else{
         next(P) = next(Prec);

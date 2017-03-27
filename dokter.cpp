@@ -10,6 +10,7 @@ address_child alokasi(infotype_child x){
 
     P = new elmlist_child;
     info(P).nama = x.nama;
+    info(P).id = x.id;
     info(P).usia = x.usia;
     info(P).jk = x.jk;
     info(P).spesialis = x.spesialis;
@@ -89,7 +90,7 @@ address_child findByID(list_child L, infotype_child x){
     }
     else{
         P = first(L);
-        while (info(P).id != x.id && P != NULL){
+        while (info(P).id != x.id && next(P) != first(L)){
             P = next(P);
         }
         if (info(P).id != x.id){
@@ -149,3 +150,22 @@ void deleteAfter(list_child &L, address_child &Prec, address_child &P){
     }
 }
 
+void insert_ascending(list_child &LC, address_child P){
+    address_child prec;
+
+    if (first(LC) == NULL){
+        insertFirst(LC,P);
+    }
+    else{
+        prec = first(LC);
+        while (next(prec) != first(LC) && info(prec).id < info(next(P)).id){
+            prec = next(prec);
+        }
+        if (next(prec) != first(LC)){
+            insertAfter(LC,prec,P);
+        }
+        else{
+            insertLast(LC,P);
+        }
+    }
+}
