@@ -46,8 +46,12 @@ void insertFirst(list_child &L, address_child P){
 void insertLast(list_child &L, address_child P){
     address_child Q;
 
-    if (first(L) == NULL || first(L) == next(first(L))){
+    if (first(L) == NULL ){
         first(L) = P;
+        next(P) = first(L);
+    }
+    else if (first(L) == next(first(L))){
+        next(first(L)) = P;
         next(P) = first(L);
     }
     else{
@@ -147,7 +151,7 @@ void insert_ascending(list_child &LC, address_child P){
     }
     else{
         prec = first(LC);
-        while (next(prec) != first(LC) && info(next(prec)).id < info(P).id){
+        while (next(prec) != first(LC) && info(prec).id < info(P).id){
             prec = next(prec);
         }
         if (next(prec) == first(LC)){
@@ -201,6 +205,6 @@ void printInfo(list_child L){
             cout<<endl<<"  > No. HP        : "<<info(C).no_hp<<endl;
             cout<<endl<<"  > Alamat        : "<<info(C).alamat<<endl;
             C = next(C);
-        }while (C != NULL);
+        }while (C != first(L));
     }
 }

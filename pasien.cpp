@@ -86,7 +86,7 @@ void deleteFirst(list_parent &L, address_parent &P)
 {
     P = first(L);
 
-    if (first(L) == NULL || next(P) == NULL)
+    if (first(L) == NULL || first(L) == last(L))
     {
         first(L) == NULL;
         last(L) == NULL;
@@ -127,9 +127,10 @@ void deleteAfter(list_parent &L, address_parent Prec, address_parent &P)
     else
     {
         P = next(Prec);
-        prev(next(P)) = NULL;
-        next(Prec) = NULL;
+        prev(next(P)) = Prec;
+        next(Prec) = next(P);
         next(P) = NULL;
+        prev(P) = NULL;
     }
 }
 
@@ -198,7 +199,8 @@ void printInfo(list_parent L){
         cout<<"  Data Tidak Ada"<<endl;
     }
     else{
-        do{
+        while (P != NULL)
+        {
             cout<<endl<<"  > Nama Pasien   : "<<info(P).nama<<endl;
             cout<<endl<<"  > ID            : "<<info(P).id<<endl;
             cout<<endl<<"  > Umur          : "<<info(P).umur<<endl;
@@ -208,6 +210,19 @@ void printInfo(list_parent L){
             cout<<endl<<"  > Alamat        : "<<info(P).alm<<endl;
             cout<<endl<<"  > Keluhan       : "<<info(P).keluhan<<endl;
             P = next(P);
-        }while ((P) != first(L));
+        }
+    }
+}
+
+void deleteByID(list_parent &LP, address_parent &P){
+
+    if (P == last(LP)){
+        deleteLast(LP,P);
+    }
+    else if (P == first(LP)){
+        deleteFirst(LP,P);
+    }
+    else{
+        deleteAfter(LP,prev(P),P);
     }
 }

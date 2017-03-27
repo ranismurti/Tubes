@@ -145,3 +145,32 @@ void printInfo(list_relasi L){
         }
     }
 }
+
+void deleteRelasi(list_relasi &LR, list_child LC, list_parent LP, infotype_child CC, infotype_parent PP, address_relasi &RR){
+    address_child C;
+    address_parent P;
+    address_relasi R;
+
+    C = findByID(LC,CC);
+    P = findByID(LP,PP);
+    if (C != NULL && P != NULL){
+        R = findByID(LR,P,C);
+        if (R != NULL){
+            if (R == first(LR)){
+                deleteFirst(LR,RR);
+            }
+            else if (next(R) == NULL){
+                deleteLast(LR,RR);
+            }
+            else{
+                deleteAfter(LR,prev(RR),RR);
+            }
+        }
+        else{
+            cout<<" Pasien Belum Didaftarkan ke Dokter"<<endl;
+        }
+    }
+    else{
+        cout<<"  ID Tidak Ada"<<endl;
+    }
+}

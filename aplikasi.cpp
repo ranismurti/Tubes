@@ -20,6 +20,7 @@ void menu(list_child &LC, list_parent &LP, list_relasi &LR)
         cout<<"| 4)Keluar                     |"<<endl;
         cout<<"|                              |"<<endl;
         cout<<"|==============================|"<<endl;
+        cout<<endl;
         cout<<"| > PILIH : ";
         cin>>pil;
         switch(pil)
@@ -42,6 +43,7 @@ void menu(list_child &LC, list_parent &LP, list_relasi &LR)
 void masukandata(list_child &LC, list_parent &LP, list_relasi &LR)
 {
     int pil;
+    address_parent P;
     system("CLS");
     do
     {
@@ -57,6 +59,7 @@ void masukandata(list_child &LC, list_parent &LP, list_relasi &LR)
         cout<<"| 3)Kembali Ke Menu            |"<<endl;
         cout<<"|                              |"<<endl;
         cout<<"|==============================|"<<endl;
+        printInfo(LP);
         cout<<"| > PILIH: ";
         cin>>pil;
         switch(pil)
@@ -78,7 +81,6 @@ void insert_child(list_child &LC)
 {
     infotype_child D;
     address_child C;
-    address_child CC;
 
     system("CLS");
     cout<<"|========================================================================|"<<endl;
@@ -115,7 +117,9 @@ void insert_child(list_child &LC)
 void insert_parent(list_parent &LP)
 {
     infotype_parent P;
-    address_parent Q;
+    address_parent Q,PP;
+    infotype_parent x;
+
     system("CLS");
     cout<<"|========================================================================|"<<endl;
     cout<<"|                           INPUT DATA PASIEN                            |"<<endl;
@@ -146,6 +150,13 @@ void insert_parent(list_parent &LP)
         insert_ascending(LP,Q);
         cout<<"  Data Berhasil Di Masukkan";
     }
+    cout<<" Hapus"<<endl;
+        cout<<" ID : "<<endl;
+        cin>>x.id;
+        PP = findByID(LP,x);
+        if (PP != NULL){
+            deleteByID(LP,PP);
+        }
     getch();
 }
 
