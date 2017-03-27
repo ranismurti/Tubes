@@ -2,6 +2,9 @@
 #define APLIKASI_H_INCLUDED
 
 #include <cstdlib>
+#include <stdlib.h>
+#include <conio.h>
+
 #include "dokter.h"
 #include "pasien.h"
 #include "relasi.h"

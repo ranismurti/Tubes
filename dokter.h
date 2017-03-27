@@ -39,5 +39,6 @@ void dealokasi(address_child &P);
 address_child findByID(list_child L, infotype_child x);
 
 void insert_ascending(list_child &LC, address_child P);
+bool cek_id(list_child LC,infotype_child x);
 
 #endif // DOKTER_H_INCLUDED

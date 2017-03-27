@@ -129,7 +129,7 @@ void deleteAfter(list_parent &L, address_parent Prec, address_parent &P)
     }
 }
 
-void insertAfter(list_parent &L,address_parent Prec,address_parent &P)
+void insertAfter(list_parent &L,address_parent Prec,address_parent P)
 {
     if (next(Prec) == NULL){
         insertLast(L,P);
@@ -141,23 +141,46 @@ void insertAfter(list_parent &L,address_parent Prec,address_parent &P)
     }
 }
 
-void insert_ascending(list_parent &LP, address_parent P)
-{
-    address_parent Q;
+void insert_ascending(list_parent &LP, address_parent P){
+    address_parent prec;
 
-    if (first(L) == NULL || info(first(L)).id > info(P).id ){
+    if (first(LP) == NULL || info(first(LP)).id > info(P).id){
         insertFirst(LP,P);
     }
     else{
-        Q = first(L);
-        while (Q != NULL && info(Q).nama < info(P).nama){
-            Q = next(Q);
+        prec = first(LP);
+        while (next(prec) != NULL && info(next(prec)).id < info(P).id){
+            prec = next(prec);
         }
-        if (Q != NULL){
-            inserAfter(LP,prev(Q),P);
-        }
-        else{
+        if (next(prec) == NULL){
             insertLast(LP,P);
         }
+        else{
+            insertAfter(LP,prec,P);
+        }
     }
+}
+
+bool cek_id(list_parent LP,infotype_parent x)
+{
+    bool ada;
+    address_parent P;
+
+    if (first(LP) == NULL){
+        ada = false;
+    }
+    else{
+        P = first(LP);
+        while (next(P) != NULL && info(P).id != x.id){
+            P = next(P);
+        }
+        if (info(P).id == x.id){
+            ada = true;
+        }
+        else{
+            ada = false;
+        }
+    }
+
+    return ada;
 }

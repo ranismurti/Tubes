@@ -46,7 +46,7 @@ void insertFirst(list_child &L, address_child P){
 void insertLast(list_child &L, address_child P){
     address_child Q;
 
-    if (first(L) = NULL){
+    if (first(L) == NULL || first(L) == next(first(L))){
         first(L) = P;
         next(P) = first(L);
     }
@@ -69,17 +69,6 @@ void insertAfter(list_child &L, address_child prec,address_child P)
     else {
         next(P)=next(prec);
         next(prec)=P;
-    }
-}
-
-void sorting(list_child &L, address_child P){
-    address_child prec;
-
-    if(first(L) == NULL){
-        insertFirst(L,P);
-    }
-    else{
-
     }
 }
 address_child findByID(list_child L, infotype_child x){
@@ -158,16 +147,38 @@ void insert_ascending(list_child &LC, address_child P){
     }
     else{
         prec = first(LC);
-        while (next(prec) != first(LC) && info(prec).id < info(next(P)).id){
+        while (next(prec) != first(LC) && info(next(prec)).id < info(P).id){
             prec = next(prec);
         }
-        cout<<info(prec).id;
         if (next(prec) == first(LC)){
             insertLast(LC,P);
         }
         else{
             insertAfter(LC,prec,P);
         }
-        cout<<info(next(first(LC))).id;
     }
+}
+
+bool cek_id(list_child LC,infotype_child x)
+{
+    bool ada;
+    address_child C;
+
+    if (first(LC) == NULL){
+        ada = false;
+    }
+    else{
+        C = first(LC);
+        while (next(C) != first(LC) && info(C).id != x.id){
+            C = next(C);
+        }
+        if (info(C).id == x.id){
+            ada = true;
+        }
+        else{
+            ada = false;
+        }
+    }
+
+    return ada;
 }
