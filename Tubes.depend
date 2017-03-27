@@ -1,0 +1,30 @@
+# depslib dependency file v1.0
+1490624939 source:c:\users\rani\documents\tubes\aplikasi.cpp
+	"aplikasi.h"
+
+1490624714 c:\users\rani\documents\tubes\aplikasi.h
+	"dokter.h"
+	"pasien.h"
+	"relasi.h"
+
+1490622602 c:\users\rani\documents\tubes\dokter.h
+	<iostream>
+
+1490607761 c:\users\rani\documents\tubes\pasien.h
+	<iostream>
+
+1490625055 c:\users\rani\documents\tubes\relasi.h
+	<iostream>
+	"pasien.h"
+	"dokter.h"
+
+1490624976 source:c:\users\rani\documents\tubes\dokter.cpp
+	"dokter.h"
+
+1490607761 source:c:\users\rani\documents\tubes\main.cpp
+	<iostream>
+	"aplikasi.h"
+
+1490607761 source:c:\users\rani\documents\tubes\pasien.cpp
+	"pasien.h"
+
