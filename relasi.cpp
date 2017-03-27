@@ -1,6 +1,5 @@
 #include "relasi.h"
 
-#include "list_relasi.h"
 
 void createList(list_relasi &L){
     first(L) = NULL;
