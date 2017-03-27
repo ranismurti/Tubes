@@ -173,6 +173,11 @@ void insertRelasi(list_relasi &LR,list_child LC,list_parent LP)
     if (C != NULL && P !=NULL)
     {
         R = alokasi(P,C);
-        insertFirst(LR,R);
+        insertLast(LR,R);
+        cout<<"  Pasien Berhasil Didaftarkan"<<endl;
     }
+    else{
+        cout<<"  ID Tidak Ditemukan"<<endl;
+    }
+    getch();
 }

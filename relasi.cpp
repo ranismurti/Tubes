@@ -136,10 +136,11 @@ void printInfo(list_relasi L){
     R = first(L);
 
     if (first(L) == NULL){
-        cout<<"List Kosong"<<endl;
+        cout<<"  Data Tidak Ada"<<endl;
     }
     else{
         while (R != NULL){
+            cout<<"  "<<info(parent(R)).nama<<" - "<<info(child(R)).nama<<endl;
             R = next(R);
         }
     }
