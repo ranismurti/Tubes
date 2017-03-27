@@ -2,8 +2,6 @@
 #define RELASI_H_INCLUDED
 
 #include <iostream>
-#include "pasien.h"
-#include "dokter.h"
 
 #define next(P) P->next
 #define prev(P) P->prev
