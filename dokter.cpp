@@ -60,9 +60,10 @@ void insertLast(list_child &L, address_child P){
 
 }
 
-void insertAfter(list_child &L, address_child prec,address_child P){
-    if (next(prec)=first(L){
-        insertLast(L,P)
+void insertAfter(list_child &L, address_child prec,address_child P)
+{
+    if (next(prec)==first(L)){
+        insertLast(L,P);
     }
     else {
         next(P)=next(prec);

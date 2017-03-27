@@ -17,7 +17,7 @@ void menu(list_child &LC, list_parent &LP, list_relasi &LR)
         case 1:
             masukandata(LC,LP,LR);
         case 2:
-            void insertRelasi(LR,LC,LP,C,P);
+            insertRelasi(LR,LC,LP);
         case 3:
             break;
         }
@@ -81,7 +81,6 @@ void insert_parent(list_parent &LP)
 {
     pasien P;
     address_parent Q;
-    address_parent prec;
 
     cout<<endl<<"  INPUT DATA PASIEN"<<endl<<endl;
     cout<<endl<<"  > Nama Pasien    : ";
@@ -104,18 +103,19 @@ void insert_parent(list_parent &LP)
 
 
     Q = alokasi(P);
-    prec=first(LP);
 }
 
-void insertRelasi(list_relasi &LR,list_child LC,list_parent LP,adrress_child C,address_parent P)
+void insertRelasi(list_relasi &LR,list_child LC,list_parent LP)
 {
-    string x;
-    int y;
+    infotype_parent x;
+    infotype_child y;
+    address_child C;
+    address_parent P;
     address_relasi R;
     cout<<"  1)Masukan No.KTP pasien    : ";
-    cin>>x;
+    cin>>x.id;
     cout<<"  2)Masukan ID Dokter        : ";
-    cin>>y;
+    cin>>y.id;
     C=findByID(LC,y);
     P=findByID(LP,x);
     if (C!=NULL && P !=NULL)
