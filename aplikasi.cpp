@@ -3,14 +3,24 @@
 void menu(list_child &LC, list_parent &LP, list_relasi &LR)
 {
     int pil;
+    system("CLS");
     do
     {
         cout<<endl;
-        cout<<"  1)Masukan Data"<<endl<<endl;
-        cout<<"  2)Daftarkan Pasien ke Dokter"<<endl<<endl;
-        cout<<"  3)Tampil Data"<<endl<<endl;
-        cout<<"  3)Keluar"<<endl<<endl;
-        cout<<"  > PILIH : ";
+        cout<<"|==============================|"<<endl;
+        cout<<"|             MENU             |"<<endl;
+        cout<<"|==============================|"<<endl;
+        cout<<"|                              |"<<endl;
+        cout<<"| 1)Masukan Data               |"<<endl;
+        cout<<"|                              |"<<endl;
+        cout<<"| 2)Daftarkan Pasien ke Dokter |"<<endl;
+        cout<<"|                              |"<<endl;
+        cout<<"| 3)Tampil Data                |"<<endl;
+        cout<<"|                              |"<<endl;
+        cout<<"| 4)Keluar                     |"<<endl;
+        cout<<"|                              |"<<endl;
+        cout<<"|==============================|"<<endl;
+        cout<<"> PILIH : ";
         cin>>pil;
         switch(pil)
         {
@@ -19,6 +29,8 @@ void menu(list_child &LC, list_parent &LP, list_relasi &LR)
         case 2:
             insertRelasi(LR,LC,LP);
         case 3:
+            cout<<"tampil";
+        case 4:
             break;
         }
     }
@@ -28,12 +40,21 @@ void menu(list_child &LC, list_parent &LP, list_relasi &LR)
 void masukandata(list_child &LC, list_parent &LP, list_relasi &LR)
 {
     int pil;
+    system("CLS");
     do
     {
         cout<<endl;
-        cout<<"  1)Masukan Data Pasien"<<endl<<endl;
-        cout<<"  2)Masukan Data Dokter"<<endl<<endl;
-        cout<<"  3)Kembali"<<endl<<endl;
+        cout<<"|==============================|"<<endl;
+        cout<<"|           MENU DATA          |"<<endl;
+        cout<<"|==============================|"<<endl;
+        cout<<"|                              |"<<endl;
+        cout<<"| 1)Masukan Data Pasien        |"<<endl;
+        cout<<"|                              |"<<endl;
+        cout<<"| 2)Masukan Data Dokter        |"<<endl;
+        cout<<"|                              |"<<endl;
+        cout<<"| 3)Kembali Ke Menu            |"<<endl;
+        cout<<"|                              |"<<endl;
+        cout<<"|==============================|"<<endl;
         cout<<"  > PILIH: ";
         cin>>pil;
         switch(pil)
@@ -56,7 +77,11 @@ void insert_child(list_child &LC)
     dokter D;
     address_child C;
     address_child CC;
-    cout<<endl<<"  INPUT DATA DOKTER"<<endl<<endl;
+
+    system("CLS");
+    cout<<"|========================================================================|"<<endl;
+    cout<<"|                           INPUT DATA DOKTER                            |"<<endl;
+    cout<<"|========================================================================|"<<endl;
     cout<<"  > Nama Dokter : ";
     cin>>D.nama;
     cout<<endl<<"  > ID : ";
@@ -82,8 +107,10 @@ void insert_parent(list_parent &LP)
 {
     pasien P;
     address_parent Q;
-
-    cout<<endl<<"  INPUT DATA PASIEN"<<endl<<endl;
+    system("CLS");
+    cout<<"|========================================================================|"<<endl;
+    cout<<"|                           INPUT DATA PASIEN                            |"<<endl;
+    cout<<"|========================================================================|"<<endl;
     cout<<endl<<"  > Nama Pasien    : ";
     cin>>P.nama;
     cout<<endl<<"  > ID             : ";
@@ -115,12 +142,18 @@ void insertRelasi(list_relasi &LR,list_child LC,list_parent LP)
     address_child C;
     address_parent P;
     address_relasi R;
-    cout<<info(first(LC)).id;
-    cout<<info(first(LP)).id;
-    cout<<"  1)Masukan No.KTP pasien    : ";
+
+    system("CLS");
+    cout<<endl;
+    cout<<"|========================================================================|"<<endl;
+    cout<<"|                       DAFTARKAN PASIEN KE DOKTER                       |"<<endl;
+    cout<<"|========================================================================|"<<endl;
+    cout<<"  1) Masukan No.KTP pasien    : ";
     cin>>x.id;
-    cout<<"  2)Masukan ID Dokter        : ";
+    cout<<endl;
+    cout<<"  2) Masukan ID Dokter        : ";
     cin>>y.id;
+    cout<<endl;
     C = findByID(LC,y);
     P = findByID(LP,x);
     if (C != NULL && P !=NULL)
@@ -128,6 +161,4 @@ void insertRelasi(list_relasi &LR,list_child LC,list_parent LP)
         R = alokasi(P,C);
         insertFirst(LR,R);
     }
-    cout<<info(child(first(LR))).id;
-
 }
