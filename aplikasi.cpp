@@ -7,7 +7,8 @@ void menu(list_child &LC, list_parent &LP, list_relasi &LR)
     {
         cout<<endl;
         cout<<"  1)Masukan Data"<<endl<<endl;
-        cout<<"  2)Tampil Data"<<endl<<endl;
+        cout<<"  2)Daftarkan Pasen ke Dokter"<<endl<<endl;
+        cout<<"  3)Tampil Data"<<endl<<endl;
         cout<<"  3)Keluar"<<endl<<endl;
         cout<<"  > PILIH : ";
         cin>>pil;
@@ -16,7 +17,7 @@ void menu(list_child &LC, list_parent &LP, list_relasi &LR)
         case 1:
             masukandata(LC,LP,LR);
         case 2:
-            cout<<"dua";
+            void insertRelasi(LR,LC,LP,C,P);
         case 3:
             break;
         }
@@ -74,25 +75,6 @@ void insert_child(list_child &LC)
 
     C = alokasi(D);
     prec = first(LC);
-    if(first(LC) == NULL)
-    {
-        insertFirst(LC,C);
-    }
-    else
-    {
-        while(info(prec).nama < D.nama)
-        {
-            prec=next(prec);
-        }
-        if (next(prec)=first(LC))
-        {
-            insertLast(LC,C);
-        }
-        else
-        {
-            //insertAfter(LC,prec,C);
-        }
-    }
 }
 
 void insert_parent(list_parent &LP)
@@ -123,25 +105,6 @@ void insert_parent(list_parent &LP)
 
     Q = alokasi(P);
     prec=first(LP);
-    if(first(LP)==NULL)
-    {
-        insertFirst(LP,Q);
-    }
-    else
-    {
-        while(info(prec).nama < P.nama)
-        {
-            prec=next(prec);
-        }
-        if (next(prec)==NULL)
-        {
-            insertLast(LP,Q);
-        }
-        else
-        {
-            //insertAfter(LP,prec,Q);
-        }
-    }
 }
 
 void insertRelasi(list_relasi &LR,list_child LC,list_parent LP,adrress_child C,address_parent P)
