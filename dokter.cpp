@@ -182,3 +182,25 @@ bool cek_id(list_child LC,infotype_child x)
 
     return ada;
 }
+
+void printInfo(list_child L){
+    address_child C;
+
+    C = first(L);
+
+    if (first(L) == NULL){
+        cout<<"  Data Tidak Ada"<<endl;
+    }
+    else{
+        do{
+            cout<<endl<<"  > Nama Dokter   : "<<info(C).nama<<endl;
+            cout<<endl<<"  > ID            : "<<info(C).id<<endl;
+            cout<<endl<<"  > Umur          : "<<info(C).usia<<endl;
+            cout<<endl<<"  > Jenis Kelamin : "<<info(C).jk<<endl;
+            cout<<endl<<"  > Spesialis     : "<<info(C).spesialis<<endl;
+            cout<<endl<<"  > No. HP        : "<<info(C).no_hp<<endl;
+            cout<<endl<<"  > Alamat        : "<<info(C).alamat<<endl;
+            C = next(C);
+        }while (C != NULL);
+    }
+}

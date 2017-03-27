@@ -33,6 +33,7 @@ void insertAfter(list_child &L, address_child Prec, address_child P);
 void deleteFirst(list_child &L, address_child &P);
 void deleteLast(list_child &L, address_child &P);
 void deleteAfter(list_child &L, address_child Prec, address_child P);
+void printInfo(list_child L);
 
 address_child alokasi(infotype_child x);
 void dealokasi(address_child &P);

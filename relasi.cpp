@@ -111,21 +111,16 @@ void dealokasi(address_relasi &P){
     delete P;
 }
 
-/**address_relasi findByID(list_relasi L, address_parent P, address_child C){
+address_relasi findByID(list_relasi L, address_parent P, address_child C){
     address_relasi R;
-    address_child CC;
-    address_parent PP;
 
     R = first(L);
-    CC = first(child(L));
-    PP = first(parent(L));
     if (first(L) == NULL){
         R = NULL;
     }
     else{
-        while (PP != NULL && CC != first(L) && info(parent(L)).id != info(P).id && info(child(L)).id != info(C).id){
-            CC = next(CC);
-            PP = next(PP);
+        while (R != NULL && info(parent(R)).id != info(P).id && info(child(R)).id != info(C).id){
+            R = next(R);
         }
         if ((R) == NULL){
             R = NULL;
@@ -133,7 +128,7 @@ void dealokasi(address_relasi &P){
     }
 
     return R;
-}**/
+}
 
 void printInfo(list_relasi L){
     address_relasi R;

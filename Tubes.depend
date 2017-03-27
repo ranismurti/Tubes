@@ -43,10 +43,10 @@
 	"pasien.h"
 	"relasi.h"
 
-1490636468 e:\tubes\dokter.h
+1490639422 e:\tubes\dokter.h
 	<iostream>
 
-1490637441 e:\tubes\pasien.h
+1490639431 e:\tubes\pasien.h
 	<iostream>
 
 1490625465 e:\tubes\relasi.h
@@ -54,7 +54,7 @@
 	"pasien.h"
 	"dokter.h"
 
-1490636526 source:e:\tubes\dokter.cpp
+1490639452 source:e:\tubes\dokter.cpp
 	"dokter.h"
 
 1490630496 source:e:\tubes\main.cpp

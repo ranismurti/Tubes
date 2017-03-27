@@ -46,5 +46,6 @@ void printinfo(list_parent L);
 
 void insert_ascending(list_parent &LP,address_parent P);
 bool cek_id(list_parent LP,infotype_parent x);
+void printInfo(list_parent L);
 
 #endif // PASIEN_H_INCLUDED

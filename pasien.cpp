@@ -73,6 +73,10 @@ address_parent findByID(list_parent L, infotype_parent x)
         {
             P = next(P);
         }
+        if (info(P).id != x.id)
+        {
+            P = NULL;
+        }
     }
 
     return P;
@@ -183,4 +187,27 @@ bool cek_id(list_parent LP,infotype_parent x)
     }
 
     return ada;
+}
+
+void printInfo(list_parent L){
+    address_parent P;
+
+    P = first(L);
+
+    if (first(L) == NULL){
+        cout<<"  Data Tidak Ada"<<endl;
+    }
+    else{
+        do{
+            cout<<endl<<"  > Nama Pasien   : "<<info(P).nama<<endl;
+            cout<<endl<<"  > ID            : "<<info(P).id<<endl;
+            cout<<endl<<"  > Umur          : "<<info(P).umur<<endl;
+            cout<<endl<<"  > Jenis Kelamin : "<<info(P).jk<<endl;
+            cout<<endl<<"  > Tanggal Lahir : "<<info(P).tgllahir<<endl;
+            cout<<endl<<"  > Gol. Darah    : "<<info(P).darah<<endl;
+            cout<<endl<<"  > Alamat        : "<<info(P).alm<<endl;
+            cout<<endl<<"  > Keluhan       : "<<info(P).keluhan<<endl;
+            P = next(P);
+        }while ((P) != first(L));
+    }
 }
