@@ -1,6 +1,7 @@
 #ifndef APLIKASI_H_INCLUDED
 #define APLIKASI_H_INCLUDED
 
+#include <cstdlib>
 #include "dokter.h"
 #include "pasien.h"
 #include "relasi.h"
