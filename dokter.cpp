@@ -153,7 +153,7 @@ void deleteAfter(list_child &L, address_child &Prec, address_child &P){
 void insert_ascending(list_child &LC, address_child P){
     address_child prec;
 
-    if (first(LC) == NULL){
+    if (first(LC) == NULL || info(first(LC)).id > info(P).id){
         insertFirst(LC,P);
     }
     else{
@@ -161,11 +161,13 @@ void insert_ascending(list_child &LC, address_child P){
         while (next(prec) != first(LC) && info(prec).id < info(next(P)).id){
             prec = next(prec);
         }
-        if (next(prec) != first(LC)){
-            insertAfter(LC,prec,P);
-        }
-        else{
+        cout<<info(prec).id;
+        if (next(prec) == first(LC)){
             insertLast(LC,P);
         }
+        else{
+            insertAfter(LC,prec,P);
+        }
+        cout<<info(next(first(LC))).id;
     }
 }

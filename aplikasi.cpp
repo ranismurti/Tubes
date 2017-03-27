@@ -74,7 +74,7 @@ void insert_child(list_child &LC)
     cout<<endl;
 
     C = alokasi(D);
-    insertFirst(LC,C);
+    insert_ascending(LC,C);
     cout<<info(first(LC)).id;
 }
 
