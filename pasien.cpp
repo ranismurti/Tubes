@@ -140,3 +140,24 @@ void insertAfter(list_parent &L,address_parent Prec,address_parent &P)
         next(Prec) = P;
     }
 }
+
+void insert_ascending(list_parent &LP, address_parent P)
+{
+    address_parent Q;
+
+    if (first(L) == NULL || info(first(L)).id > info(P).id ){
+        insertFirst(LP,P);
+    }
+    else{
+        Q = first(L);
+        while (Q != NULL && info(Q).nama < info(P).nama){
+            Q = next(Q);
+        }
+        if (Q != NULL){
+            inserAfter(LP,prev(Q),P);
+        }
+        else{
+            insertLast(LP,P);
+        }
+    }
+}

@@ -43,5 +43,6 @@ void deleteFirst(list_parent &L, address_parent &P);
 void deleteLast(list_parent &L, address_parent &P);
 void deleteAfter(list_parent &L, address_parent Prec, address_parent &P);
 void printinfo(list_parent L);
+void insertAscending(list_parent &LP,address_parent P);
 
 #endif // PASIEN_H_INCLUDED
