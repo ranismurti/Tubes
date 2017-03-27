@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1490624939 source:c:\users\rani\documents\tubes\aplikasi.cpp
+1490629345 source:c:\users\rani\documents\tubes\aplikasi.cpp
 	"aplikasi.h"
 
 1490624714 c:\users\rani\documents\tubes\aplikasi.h
@@ -7,7 +7,7 @@
 	"pasien.h"
 	"relasi.h"
 
-1490622602 c:\users\rani\documents\tubes\dokter.h
+1490627026 c:\users\rani\documents\tubes\dokter.h
 	<iostream>
 
 1490607761 c:\users\rani\documents\tubes\pasien.h
@@ -18,13 +18,16 @@
 	"pasien.h"
 	"dokter.h"
 
-1490624976 source:c:\users\rani\documents\tubes\dokter.cpp
+1490629041 source:c:\users\rani\documents\tubes\dokter.cpp
 	"dokter.h"
 
-1490607761 source:c:\users\rani\documents\tubes\main.cpp
+1490627900 source:c:\users\rani\documents\tubes\main.cpp
 	<iostream>
 	"aplikasi.h"
 
-1490607761 source:c:\users\rani\documents\tubes\pasien.cpp
+1490628730 source:c:\users\rani\documents\tubes\pasien.cpp
 	"pasien.h"
+
+1490627810 source:c:\users\rani\documents\tubes\relasi.cpp
+	"relasi.h"
 
