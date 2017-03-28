@@ -15,7 +15,6 @@ address_parent alokasi(infotype_parent x)
     info(P).id = x.id;
     info(P).umur = x.umur;
     info(P).jk = x.jk;
-    info(P).tgllahir = x.tgllahir;
     info(P).darah = x.darah;
     info(P).alm = x.alm;
     info(P).keluhan = x.keluhan;
@@ -205,10 +204,10 @@ void printInfo(list_parent L){
             cout<<endl<<"  > ID            : "<<info(P).id<<endl;
             cout<<endl<<"  > Umur          : "<<info(P).umur<<endl;
             cout<<endl<<"  > Jenis Kelamin : "<<info(P).jk<<endl;
-            cout<<endl<<"  > Tanggal Lahir : "<<info(P).tgllahir<<endl;
             cout<<endl<<"  > Gol. Darah    : "<<info(P).darah<<endl;
             cout<<endl<<"  > Alamat        : "<<info(P).alm<<endl;
-            cout<<endl<<"  > Keluhan       : "<<info(P).keluhan<<endl;
+            cout<<endl<<"  > Keluhan       : "<<info(P).keluhan<<endl<<endl;
+            cout<<"|========================================================================|"<<endl;
             P = next(P);
         }
     }

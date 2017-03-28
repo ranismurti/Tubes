@@ -15,7 +15,7 @@ struct pasien{
     int id;
 
     string nama,jk,darah,alm,keluhan;
-    int umur,tgllahir;
+    int umur;
 };
 
 typedef pasien infotype_parent;

@@ -73,7 +73,7 @@ address_child findByID(list_child L, infotype_child x){
     }
     else{
         P = first(L);
-        while (info(P).id != x.id && next(P) != NULL){
+        while (info(P).id != x.id && (P) != NULL){
             P = next(P);
         }
         if (info(P).id != x.id){
@@ -185,18 +185,20 @@ void printInfo(list_child L){
             cout<<endl<<"  > Jenis Kelamin : "<<info(C).jk<<endl;
             cout<<endl<<"  > Spesialis     : "<<info(C).spesialis<<endl;
             cout<<endl<<"  > No. HP        : "<<info(C).no_hp<<endl;
-            cout<<endl<<"  > Alamat        : "<<info(C).alamat<<endl;
+            cout<<endl<<"  > Alamat        : "<<info(C).alamat<<endl<<endl;
+            cout<<"|========================================================================|"<<endl;
             C = next(C);
         }while (C != NULL);
     }
 }
+
 void deleteByID(list_child &LC,address_child &P){
     address_child prec;
 
-    if (next(P)==NULL){
+    if (next(P) == NULL){
         deleteLast(LC,P);
     }
-    else if (P== first(LC)){
+    else if (P == first(LC)){
         deleteFirst(LC,P);
     }
     else{
