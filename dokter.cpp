@@ -26,20 +26,14 @@ void dealokasi(address_child &P){
 }
 
 void insertFirst(list_child &L, address_child P){
-    address_child Q;
 
     if (first(L) == NULL){
         first(L) = P;
-        next(P) = first(L);
+        next(P) = NULL;
     }
     else{
-        next(P) = first(L);
-        Q = first(L);
-        while (next(Q) != first(L)){
-            Q = next(Q);
-        }
-        next(Q) = P;
-        first(L) = P;
+        next(P)=first(L);
+        first(L)=P;
     }
 }
 
@@ -48,26 +42,22 @@ void insertLast(list_child &L, address_child P){
 
     if (first(L) == NULL ){
         first(L) = P;
-        next(P) = first(L);
-    }
-    else if (first(L) == next(first(L))){
-        next(first(L)) = P;
-        next(P) = first(L);
+        next(P) = NULL;
     }
     else{
         Q = first(L);
-        while (next(Q) != first(L)){
+        while (next(Q) != NULL){
             Q = next(Q);
         }
         next(Q) = P;
-        next(P) = first(L);
+        next(P) = NULL;
     }
 
 }
 
 void insertAfter(list_child &L, address_child prec,address_child P)
 {
-    if (next(prec)==first(L)){
+    if (next(prec)==NULL){
         insertLast(L,P);
     }
     else {
@@ -83,7 +73,7 @@ address_child findByID(list_child L, infotype_child x){
     }
     else{
         P = first(L);
-        while (info(P).id != x.id && next(P) != first(L)){
+        while (info(P).id != x.id && next(P) != NULL){
             P = next(P);
         }
         if (info(P).id != x.id){
@@ -95,51 +85,43 @@ address_child findByID(list_child L, infotype_child x){
 }
 
 void deleteFirst(list_child &L, address_child &P){
-    address_child Q;
-
-    P = first(L);
-
-    if (first(L) == NULL || next(first(L)) == first(L)){
-        first(L) = NULL;
+    P=first(L);
+    if (first(L)==NULL || next(first(L))!=NULL){
+        first(L)=NULL;
     }
     else{
-        first(L) = next(P);
-        Q = first(L);
-        while (next(Q) != P){
-            Q = next(Q);
-        }
-        next(Q) = first(L);
-        next(P) = NULL;
+        first(L)=next(P);
+        next(P)=NULL;
     }
 
 }
 
 void deleteLast(list_child &L, address_child &P){
-    address_child Q;
 
     P = first(L);
 
-    if (first(L) == NULL || next(first(L)) == first(L)){
+    if (first(L) == NULL || next(first(L)) == NULL){
         first(L) = NULL;
     }
     else{
-        Q = first(L);
-        while (next(Q) != first(L)){
-            Q = next(Q);
+        P = first(L);
+        while (next(next(P)) != NULL){
+            P= next(P);
         }
-        next(Q) = P;
-        next(P) = first(L);
+        P=next(P);
+        next(P)=NULL;
     }
 }
 
-void deleteAfter(list_child &L, address_child &Prec, address_child &P){
+void deleteAfter(list_child &L, address_child Prec, address_child &P){
 
-    if (next(next(Prec)) == first(L)){
+    if (next(next(Prec)) == NULL){
         deleteLast(L,P);
     }
     else{
-        next(P) = next(Prec);
-        next(Prec) = P;
+        P = next(Prec);
+        next(Prec) = next(P);
+        next(P)=NULL;
     }
 }
 
@@ -151,10 +133,10 @@ void insert_ascending(list_child &LC, address_child P){
     }
     else{
         prec = first(LC);
-        while (next(prec) != first(LC) && info(prec).id < info(P).id){
+        while (next(prec) != NULL && info(prec).id < info(P).id){
             prec = next(prec);
         }
-        if (next(prec) == first(LC)){
+        if (next(prec) == NULL){
             insertLast(LC,P);
         }
         else{
@@ -173,7 +155,7 @@ bool cek_id(list_child LC,infotype_child x)
     }
     else{
         C = first(LC);
-        while (next(C) != first(LC) && info(C).id != x.id){
+        while (next(C) != NULL && info(C).id != x.id){
             C = next(C);
         }
         if (info(C).id == x.id){
@@ -205,6 +187,23 @@ void printInfo(list_child L){
             cout<<endl<<"  > No. HP        : "<<info(C).no_hp<<endl;
             cout<<endl<<"  > Alamat        : "<<info(C).alamat<<endl;
             C = next(C);
-        }while (C != first(L));
+        }while (C != NULL);
+    }
+}
+void deleteByID(list_child &LC,address_child &P){
+    address_child prec;
+
+    if (next(P)==NULL){
+        deleteLast(LC,P);
+    }
+    else if (P== first(LC)){
+        deleteFirst(LC,P);
+    }
+    else{
+        prec = first(LC);
+        while (next(prec) != P){
+            prec = next(prec);
+        }
+        deleteAfter(LC,prec,P);
     }
 }
