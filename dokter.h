@@ -9,7 +9,7 @@ using namespace std;
 #define info(P) P->info
 
 struct dokter{
-    string nama,jk,spesialis,no_hp,alamat;
+    string nama,jk,spesialis,no_hp;
     int id,usia;
 };
 
@@ -42,5 +42,6 @@ address_child findByID(list_child L, infotype_child x);
 void insert_ascending(list_child &LC, address_child P);
 bool cek_id(list_child LC,infotype_child x);
 void deleteByID(list_child &LC,address_child &P);
+void edit_data(list_child &LC, address_child C, infotype_child y);
 
 #endif // DOKTER_H_INCLUDED

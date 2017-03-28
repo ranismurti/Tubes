@@ -192,3 +192,16 @@ bool cek_id(list_relasi LR, address_child C, address_parent P)
 
     return ada;
 }
+
+void deleteByID(list_relasi &LR, address_relasi &R){
+
+    if (R == last(LR)){
+        deleteLast(LR,R);
+    }
+    else if (R == first(LR)){
+        deleteFirst(LR,R);
+    }
+    else{
+        deleteAfter(LR,prev(R),R);
+    }
+}
