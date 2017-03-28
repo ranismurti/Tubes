@@ -72,7 +72,7 @@ address_child findByID(list_child L, infotype_child x){
     }
     else{
         P = first(L);
-        while (info(P).id != x.id && (P) != NULL){
+        while (info(P).id != x.id && next(P) != NULL){
             P = next(P);
         }
         if (info(P).id != x.id){
