@@ -1,17 +1,19 @@
 # depslib dependency file v1.0
-1490632887 source:c:\users\rani\documents\tubes\aplikasi.cpp
+1490651112 source:c:\users\rani\documents\tubes\aplikasi.cpp
 	"aplikasi.h"
 
-1490631510 c:\users\rani\documents\tubes\aplikasi.h
+1490651112 c:\users\rani\documents\tubes\aplikasi.h
 	<cstdlib>
+	<stdlib.h>
+	<conio.h>
 	"dokter.h"
 	"pasien.h"
 	"relasi.h"
 
-1490627026 c:\users\rani\documents\tubes\dokter.h
+1490664573 c:\users\rani\documents\tubes\dokter.h
 	<iostream>
 
-1490607761 c:\users\rani\documents\tubes\pasien.h
+1490651112 c:\users\rani\documents\tubes\pasien.h
 	<iostream>
 
 1490625055 c:\users\rani\documents\tubes\relasi.h
@@ -26,9 +28,44 @@
 	<iostream>
 	"aplikasi.h"
 
-1490629463 source:c:\users\rani\documents\tubes\pasien.cpp
+1490651112 source:c:\users\rani\documents\tubes\pasien.cpp
 	"pasien.h"
 
-1490627810 source:c:\users\rani\documents\tubes\relasi.cpp
+1490651112 source:c:\users\rani\documents\tubes\relasi.cpp
+	"relasi.h"
+
+1490643908 source:e:\tubes\aplikasi.cpp
+	"aplikasi.h"
+
+1490636735 e:\tubes\aplikasi.h
+	<cstdlib>
+	<stdlib.h>
+	<conio.h>
+	"dokter.h"
+	"pasien.h"
+	"relasi.h"
+
+1490639422 e:\tubes\dokter.h
+	<iostream>
+
+1490642623 e:\tubes\pasien.h
+	<iostream>
+
+1490625465 e:\tubes\relasi.h
+	<iostream>
+	"pasien.h"
+	"dokter.h"
+
+1490641910 source:e:\tubes\dokter.cpp
+	"dokter.h"
+
+1490630496 source:e:\tubes\main.cpp
+	<iostream>
+	"aplikasi.h"
+
+1490644231 source:e:\tubes\pasien.cpp
+	"pasien.h"
+
+1490640006 source:e:\tubes\relasi.cpp
 	"relasi.h"
 

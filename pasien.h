@@ -44,4 +44,9 @@ void deleteLast(list_parent &L, address_parent &P);
 void deleteAfter(list_parent &L, address_parent Prec, address_parent &P);
 void printinfo(list_parent L);
 
+void insert_ascending(list_parent &LP,address_parent P);
+bool cek_id(list_parent LP,infotype_parent x);
+void printInfo(list_parent L);
+void deleteByID(list_parent &LP, address_parent &P);
+
 #endif // PASIEN_H_INCLUDED

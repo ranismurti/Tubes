@@ -111,21 +111,16 @@ void dealokasi(address_relasi &P){
     delete P;
 }
 
-/**address_relasi findByID(list_relasi L, address_parent P, address_child C){
+address_relasi findByID(list_relasi L, address_parent P, address_child C){
     address_relasi R;
-    address_child CC;
-    address_parent PP;
 
     R = first(L);
-    CC = first(child(L));
-    PP = first(parent(L));
     if (first(L) == NULL){
         R = NULL;
     }
     else{
-        while (PP != NULL && CC != first(L) && info(parent(L)).id != info(P).id && info(child(L)).id != info(C).id){
-            CC = next(CC);
-            PP = next(PP);
+        while (R != NULL && info(parent(R)).id != info(P).id && info(child(R)).id != info(C).id){
+            R = next(R);
         }
         if ((R) == NULL){
             R = NULL;
@@ -133,7 +128,7 @@ void dealokasi(address_relasi &P){
     }
 
     return R;
-}**/
+}
 
 void printInfo(list_relasi L){
     address_relasi R;
@@ -141,11 +136,41 @@ void printInfo(list_relasi L){
     R = first(L);
 
     if (first(L) == NULL){
-        cout<<"List Kosong"<<endl;
+        cout<<"  Data Tidak Ada"<<endl;
     }
     else{
         while (R != NULL){
+            cout<<"  "<<info(parent(R)).nama<<" - "<<info(child(R)).nama<<endl;
             R = next(R);
         }
+    }
+}
+
+void deleteRelasi(list_relasi &LR, list_child LC, list_parent LP, infotype_child CC, infotype_parent PP, address_relasi &RR){
+    address_child C;
+    address_parent P;
+    address_relasi R;
+
+    C = findByID(LC,CC);
+    P = findByID(LP,PP);
+    if (C != NULL && P != NULL){
+        R = findByID(LR,P,C);
+        if (R != NULL){
+            if (R == first(LR)){
+                deleteFirst(LR,RR);
+            }
+            else if (next(R) == NULL){
+                deleteLast(LR,RR);
+            }
+            else{
+                deleteAfter(LR,prev(RR),RR);
+            }
+        }
+        else{
+            cout<<" Pasien Belum Didaftarkan ke Dokter"<<endl;
+        }
+    }
+    else{
+        cout<<"  ID Tidak Ada"<<endl;
     }
 }

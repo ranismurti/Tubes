@@ -73,6 +73,10 @@ address_parent findByID(list_parent L, infotype_parent x)
         {
             P = next(P);
         }
+        if (info(P).id != x.id)
+        {
+            P = NULL;
+        }
     }
 
     return P;
@@ -82,7 +86,7 @@ void deleteFirst(list_parent &L, address_parent &P)
 {
     P = first(L);
 
-    if (first(L) == NULL || next(P) == NULL)
+    if (first(L) == NULL || first(L) == last(L))
     {
         first(L) == NULL;
         last(L) == NULL;
@@ -123,13 +127,14 @@ void deleteAfter(list_parent &L, address_parent Prec, address_parent &P)
     else
     {
         P = next(Prec);
-        prev(next(P)) = NULL;
-        next(Prec) = NULL;
+        prev(next(P)) = Prec;
+        next(Prec) = next(P);
         next(P) = NULL;
+        prev(P) = NULL;
     }
 }
 
-void insertAfter(list_parent &L,address_parent Prec,address_parent &P)
+void insertAfter(list_parent &L,address_parent Prec,address_parent P)
 {
     if (next(Prec) == NULL){
         insertLast(L,P);
@@ -138,5 +143,86 @@ void insertAfter(list_parent &L,address_parent Prec,address_parent &P)
         next(P) = next(Prec);
         prev(next(Prec)) = P;
         next(Prec) = P;
+    }
+}
+
+void insert_ascending(list_parent &LP, address_parent P){
+    address_parent prec;
+
+    if (first(LP) == NULL || info(first(LP)).id > info(P).id){
+        insertFirst(LP,P);
+    }
+    else{
+        prec = first(LP);
+        while (next(prec) != NULL && info(next(prec)).id < info(P).id){
+            prec = next(prec);
+        }
+        if (next(prec) == NULL){
+            insertLast(LP,P);
+        }
+        else{
+            insertAfter(LP,prec,P);
+        }
+    }
+}
+
+bool cek_id(list_parent LP,infotype_parent x)
+{
+    bool ada;
+    address_parent P;
+
+    if (first(LP) == NULL){
+        ada = false;
+    }
+    else{
+        P = first(LP);
+        while (next(P) != NULL && info(P).id != x.id){
+            P = next(P);
+        }
+        if (info(P).id == x.id){
+            ada = true;
+        }
+        else{
+            ada = false;
+        }
+    }
+
+    return ada;
+}
+
+void printInfo(list_parent L){
+    address_parent P;
+
+    P = first(L);
+
+    if (first(L) == NULL){
+        cout<<"  Data Tidak Ada"<<endl;
+    }
+    else{
+        while (P != NULL)
+        {
+            cout<<endl<<"  > Nama Pasien   : "<<info(P).nama<<endl;
+            cout<<endl<<"  > ID            : "<<info(P).id<<endl;
+            cout<<endl<<"  > Umur          : "<<info(P).umur<<endl;
+            cout<<endl<<"  > Jenis Kelamin : "<<info(P).jk<<endl;
+            cout<<endl<<"  > Tanggal Lahir : "<<info(P).tgllahir<<endl;
+            cout<<endl<<"  > Gol. Darah    : "<<info(P).darah<<endl;
+            cout<<endl<<"  > Alamat        : "<<info(P).alm<<endl;
+            cout<<endl<<"  > Keluhan       : "<<info(P).keluhan<<endl;
+            P = next(P);
+        }
+    }
+}
+
+void deleteByID(list_parent &LP, address_parent &P){
+
+    if (P == last(LP)){
+        deleteLast(LP,P);
+    }
+    else if (P == first(LP)){
+        deleteFirst(LP,P);
+    }
+    else{
+        deleteAfter(LP,prev(P),P);
     }
 }

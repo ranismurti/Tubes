@@ -32,12 +32,14 @@ void insertLast(list_child &L, address_child P);
 void insertAfter(list_child &L, address_child Prec, address_child P);
 void deleteFirst(list_child &L, address_child &P);
 void deleteLast(list_child &L, address_child &P);
-void deleteAfter(list_child &L, address_child Prec, address_child P);
+void deleteAfter(list_child &L, address_child Prec, address_child &P);
+void printInfo(list_child L);
 
 address_child alokasi(infotype_child x);
 void dealokasi(address_child &P);
 address_child findByID(list_child L, infotype_child x);
 
 void insert_ascending(list_child &LC, address_child P);
+bool cek_id(list_child LC,infotype_child x);
 
 #endif // DOKTER_H_INCLUDED
