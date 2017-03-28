@@ -205,3 +205,42 @@ void deleteByID(list_relasi &LR, address_relasi &R){
         deleteAfter(LR,prev(R),R);
     }
 }
+
+void sorting(list_relasi &L)
+{
+    address_relasi P,Q;
+
+    if (first(L) == NULL || next(first(L)) == NULL){
+        P = NULL;
+    }
+    else{
+        P = first(L);
+        while (P != NULL){
+            Q = next(P);
+            while (Q != NULL){
+                if (info(parent(Q)).id < info(parent(P)).id){
+                    if (next(Q) != NULL){
+                        deleteAfter(L,P,Q);
+                        if (P == first(L)){
+                            insertFirst(L,Q);
+                        }
+                        else{
+                            inserAfter(L,prev(P),Q);
+                        }
+                    }
+                    else{
+                        deleteLast(L,Q);
+                        if (P == first(L)){
+                            insertFirst(L,Q);
+                        }
+                        else{
+                            inserAfter(L,prev(P),Q);
+                        }
+                    }
+                }
+                Q = next(Q);
+            }
+            P = next(P);
+        }
+    }
+}

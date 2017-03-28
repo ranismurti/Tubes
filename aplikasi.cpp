@@ -253,6 +253,9 @@ void lihat_relasi(list_relasi LR){
     printInfo(LR);
     cout<<endl<<"  Tekan ENTER Untuk Kembali"<<endl;
     getch();
+    sorting(LR);
+    printInfo(LR);
+    getch();
     system("CLS");
 }
 
