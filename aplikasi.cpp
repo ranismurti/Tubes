@@ -246,16 +246,27 @@ void lihat_dokter(list_child LC){
 }
 
 void lihat_relasi(list_relasi LR){
+    int pil;
+
     system("CLS");
     cout<<" ======================================================================== "<<endl;
     cout<<"|                           DATA PASIEN-DOKTER                           |"<<endl;
     cout<<" ======================================================================== "<<endl;
     printInfo(LR);
-    cout<<endl<<"  Tekan ENTER Untuk Kembali"<<endl;
-    getch();
-    sorting(LR);
-    printInfo(LR);
-    getch();
+    cout<<"  1) Sorting Data"<<endl<<endl;
+    cout<<"  2) Kembali ke Menu"<<endl<<endl;
+    cout<<"     PILIH : ";
+    cin>>pil;
+    cout<<endl;
+    switch (pil){
+    case 1:
+        sorting(LR);
+        printInfo(LR);
+        getch();
+
+    case 2:
+        break;
+    }
     system("CLS");
 }
 

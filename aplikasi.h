@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include <stdlib.h>
 #include <conio.h>
+#include <string>
 
 #include "dokter.h"
 #include "pasien.h"
