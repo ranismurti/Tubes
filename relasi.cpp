@@ -19,11 +19,13 @@ void insertFirst(list_relasi &L, address_relasi P){
 }
 
 void insertLast(list_relasi &L, address_relasi P){
-    if (first(L) == NULL){
+    if (first(L) == NULL)
+    {
         first(L) = P;
         last(L) = P;
     }
-    else{
+    else
+    {
         prev(P) = last(L);
         next(last(L)) = P;
         last(L) = P;
@@ -43,52 +45,49 @@ void inserAfter(list_relasi &L, address_relasi Prec, address_relasi P){
 }
 
 void deleteFirst(list_relasi &L, address_relasi &P){
-    if (first(L) == NULL){
-        P = NULL;
+    P = first(L);
+
+    if (first(L) == NULL || first(L) == last(L))
+    {
+        first(L) = NULL;
+        last(L) = NULL;
     }
-    else{
-        P = first(L);
-        if (next(P) = NULL){
-            first(L) = NULL;
-            last(L) = NULL;
-        }
-        else{
-            first(L) = next(P);
-            next(P) = NULL;
-            prev(first(L)) = NULL;
-        }
+    else
+    {
+        first(L) = next(P);
+        prev(first(L)) = NULL;
+        next(P) = NULL;
     }
 }
 
 void deleteLast(list_relasi &L, address_relasi &P){
-    if (first(L) == NULL){
-        P = NULL;
+    P = last(L);
+
+    if (first(L) == NULL || next(first(L)) == NULL)
+    {
+        first(L) = NULL;
+        last(L) = NULL;
     }
-    else{
-        P = last(L);
-        if ((P) = first(L)){
-            first(L) = NULL;
-            last(L) = NULL;
-        }
-        else{
-            last(L) = prev(P);
-            prev(P) = NULL;
-            next(last(L)) = NULL;
-        }
+    else
+    {
+        last(L) = prev(P);
+        next(last(L)) = NULL;
+        prev(P) = NULL;
     }
 }
 
 void deleteAfter(list_relasi &L, address_relasi Prec, address_relasi &P){
-    if (next(Prec) == NULL){
+    P = first(L);
+
+    if (next(Prec) == NULL)
+    {
         P = NULL;
     }
-    else if (next(next(Prec)) == NULL){
-        deleteLast(L,P);
-    }
-    else{
+    else
+    {
         P = next(Prec);
-        next(Prec) = next(P);
         prev(next(P)) = Prec;
+        next(Prec) = next(P);
         next(P) = NULL;
         prev(P) = NULL;
     }
@@ -114,17 +113,17 @@ void dealokasi(address_relasi &P){
 address_relasi findByID(list_relasi L, address_parent P, address_child C){
     address_relasi R;
 
-    R = first(L);
     if (first(L) == NULL){
         R = NULL;
     }
     else{
-        while (R != NULL && info(parent(R)).id != info(P).id && info(child(R)).id != info(C).id){
+        R = first(L);
+        while (((R) != NULL) && (info(parent(R)).id != info(P).id || info(child(R)).id != info(C).id)){
             R = next(R);
         }
-        if ((R) == NULL){
-            R = NULL;
-        }
+        //if (info(parent(R)).id != info(P).id && info(child(R)).id != info(C).id){
+          //  R = NULL;
+        //}
     }
 
     return R;
@@ -140,7 +139,8 @@ void printInfo(list_relasi L){
     }
     else{
         while (R != NULL){
-            cout<<"  "<<info(parent(R)).nama<<" - "<<info(child(R)).nama<<endl;
+            cout<<endl<<"  "<<info(parent(R)).nama<<" - "<<info(child(R)).nama<<endl;
+            cout<<"|========================================================================|"<<endl;
             R = next(R);
         }
     }
@@ -173,4 +173,25 @@ void deleteRelasi(list_relasi &LR, list_child LC, list_parent LP, infotype_child
     else{
         cout<<"  ID Tidak Ada"<<endl;
     }
+}
+
+bool cek_id(list_relasi LR, address_child C, address_parent P)
+{
+    bool ada;
+    address_relasi R;
+
+    if (first(LR) == NULL){
+        ada = false;
+    }
+    else{
+        R = findByID(LR,P,C);
+        if (R == NULL){
+            ada = false;
+        }
+        else{
+            ada = true;
+        }
+    }
+
+    return ada;
 }

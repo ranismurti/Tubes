@@ -203,7 +203,8 @@ void printInfo(list_child L){
             cout<<endl<<"  > Jenis Kelamin : "<<info(C).jk<<endl;
             cout<<endl<<"  > Spesialis     : "<<info(C).spesialis<<endl;
             cout<<endl<<"  > No. HP        : "<<info(C).no_hp<<endl;
-            cout<<endl<<"  > Alamat        : "<<info(C).alamat<<endl;
+            cout<<endl<<"  > Alamat        : "<<info(C).alamat<<endl<<endl;
+            cout<<"|========================================================================|"<<endl;
             C = next(C);
         }while (C != first(L));
     }
