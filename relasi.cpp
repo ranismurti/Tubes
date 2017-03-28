@@ -121,9 +121,6 @@ address_relasi findByID(list_relasi L, address_parent P, address_child C){
         while (((R) != NULL) && (info(parent(R)).id != info(P).id || info(child(R)).id != info(C).id)){
             R = next(R);
         }
-        //if (info(parent(R)).id != info(P).id && info(child(R)).id != info(C).id){
-          //  R = NULL;
-        //}
     }
 
     return R;

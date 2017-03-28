@@ -113,7 +113,7 @@ void menu(list_child &LC, list_parent &LP, list_relasi &LR)
             cout<<"|                           HAPUS DATA DOKTER                            |"<<endl;
             cout<<" ======================================================================== "<<endl;
             cout<<endl<<"  > Masukkan ID Dokter : ";
-            cin>>x.id;
+            cin>>y.id;
             C = findByID(LC,y);
             if (C != NULL){
                 cout<<endl<<"  > Nama Dokter   : "<<info(C).nama<<endl;
@@ -127,7 +127,7 @@ void menu(list_child &LC, list_parent &LP, list_relasi &LR)
                 cout<<"  Yakin Ingin Menghapus Data Tersebut(Y/N) : ";
                 cin>>a;
                 if (a == 'y' || a == 'Y'){
-                    //deleteByID(LC,C);
+                    deleteByID(LC,C);
                     cout<<"  Data Berhasil Dihapus, Tekan ENTER Untuk Kembali"<<endl;
                 }
                 else{

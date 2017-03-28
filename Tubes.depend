@@ -34,7 +34,7 @@
 1490651112 source:c:\users\rani\documents\tubes\relasi.cpp
 	"relasi.h"
 
-1490661148 source:e:\tubes\aplikasi.cpp
+1490665453 source:e:\tubes\aplikasi.cpp
 	"aplikasi.h"
 
 1490636735 e:\tubes\aplikasi.h
@@ -45,27 +45,27 @@
 	"pasien.h"
 	"relasi.h"
 
-1490639422 e:\tubes\dokter.h
+1490665453 e:\tubes\dokter.h
 	<iostream>
 
-1490659008 e:\tubes\pasien.h
+1490664811 e:\tubes\pasien.h
 	<iostream>
 
-1490655416 e:\tubes\relasi.h
+1490664811 e:\tubes\relasi.h
 	<iostream>
 	"pasien.h"
 	"dokter.h"
 
-1490659008 source:e:\tubes\dokter.cpp
+1490665463 source:e:\tubes\dokter.cpp
 	"dokter.h"
 
 1490630496 source:e:\tubes\main.cpp
 	<iostream>
 	"aplikasi.h"
 
-1490659008 source:e:\tubes\pasien.cpp
+1490664811 source:e:\tubes\pasien.cpp
 	"pasien.h"
 
-1490658849 source:e:\tubes\relasi.cpp
+1490664811 source:e:\tubes\relasi.cpp
 	"relasi.h"
 
