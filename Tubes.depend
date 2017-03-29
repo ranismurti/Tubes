@@ -1,37 +1,38 @@
 # depslib dependency file v1.0
-1490791996 source:c:\users\rani\documents\tubes\aplikasi.cpp
+1490799569 source:c:\users\rani\documents\tubes\aplikasi.cpp
 	"aplikasi.h"
 
-1490791996 c:\users\rani\documents\tubes\aplikasi.h
+1490799569 c:\users\rani\documents\tubes\aplikasi.h
 	<cstdlib>
 	<stdlib.h>
 	<conio.h>
+	<string>
 	"dokter.h"
 	"pasien.h"
 	"relasi.h"
 
-1490791996 c:\users\rani\documents\tubes\dokter.h
+1490799569 c:\users\rani\documents\tubes\dokter.h
 	<iostream>
 
-1490791996 c:\users\rani\documents\tubes\pasien.h
+1490799569 c:\users\rani\documents\tubes\pasien.h
 	<iostream>
 
-1490791996 c:\users\rani\documents\tubes\relasi.h
+1490799569 c:\users\rani\documents\tubes\relasi.h
 	<iostream>
 	"pasien.h"
 	"dokter.h"
 
-1490791996 source:c:\users\rani\documents\tubes\dokter.cpp
+1490799569 source:c:\users\rani\documents\tubes\dokter.cpp
 	"dokter.h"
 
 1490627900 source:c:\users\rani\documents\tubes\main.cpp
 	<iostream>
 	"aplikasi.h"
 
-1490791996 source:c:\users\rani\documents\tubes\pasien.cpp
+1490799569 source:c:\users\rani\documents\tubes\pasien.cpp
 	"pasien.h"
 
-1490791996 source:c:\users\rani\documents\tubes\relasi.cpp
+1490799569 source:c:\users\rani\documents\tubes\relasi.cpp
 	"relasi.h"
 
 1490666459 D
