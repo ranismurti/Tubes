@@ -16,7 +16,6 @@ address_parent alokasi(infotype_parent x)
     info(P).umur = x.umur;
     info(P).jk = x.jk;
     info(P).darah = x.darah;
-    info(P).alm = x.alm;
     info(P).keluhan = x.keluhan;
     next(P) = NULL;
     prev(P) = NULL;
@@ -205,7 +204,6 @@ void printInfo(list_parent L){
             cout<<endl<<"  > Umur          : "<<info(P).umur<<endl;
             cout<<endl<<"  > Jenis Kelamin : "<<info(P).jk<<endl;
             cout<<endl<<"  > Gol. Darah    : "<<info(P).darah<<endl;
-            cout<<endl<<"  > Alamat        : "<<info(P).alm<<endl;
             cout<<endl<<"  > Keluhan       : "<<info(P).keluhan<<endl<<endl;
             cout<<"|========================================================================|"<<endl;
             P = next(P);
@@ -223,5 +221,16 @@ void deleteByID(list_parent &LP, address_parent &P){
     }
     else{
         deleteAfter(LP,prev(P),P);
+    }
+}
+
+void edit_data(list_parent &LP, address_parent P,infotype_parent x){
+
+    if (P != NULL){
+        info(P).nama = x.nama;
+        info(P).umur = x.umur;
+        info(P).jk = x.jk;
+        info(P).darah = x.darah;
+        info(P).keluhan = x.keluhan;
     }
 }

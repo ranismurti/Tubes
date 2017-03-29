@@ -14,7 +14,7 @@ using namespace std;
 struct pasien{
     int id;
 
-    string nama,jk,darah,alm,keluhan;
+    string nama,jk,darah,keluhan;
     int umur;
 };
 
@@ -48,5 +48,7 @@ void insert_ascending(list_parent &LP,address_parent P);
 bool cek_id(list_parent LP,infotype_parent x);
 void printInfo(list_parent L);
 void deleteByID(list_parent &LP, address_parent &P);
+void edit_data(list_parent &LP, address_parent P,infotype_parent x);
+
 
 #endif // PASIEN_H_INCLUDED
