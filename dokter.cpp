@@ -15,6 +15,7 @@ address_child alokasi(infotype_child x){
     info(P).jk = x.jk;
     info(P).spesialis = x.spesialis;
     info(P).no_hp = x.no_hp;
+    info(P).alamat = x.alamat;
     next(P) = NULL;
 
     return P;
@@ -72,7 +73,7 @@ address_child findByID(list_child L, infotype_child x){
     }
     else{
         P = first(L);
-        while (info(P).id != x.id && next(P) != NULL){
+        while (info(P).id != x.id && (P) != NULL){
             P = next(P);
         }
         if (info(P).id != x.id){
@@ -183,7 +184,8 @@ void printInfo(list_child L){
             cout<<endl<<"  > Umur          : "<<info(C).usia<<endl;
             cout<<endl<<"  > Jenis Kelamin : "<<info(C).jk<<endl;
             cout<<endl<<"  > Spesialis     : "<<info(C).spesialis<<endl;
-            cout<<endl<<"  > No. HP        : "<<info(C).no_hp<<endl<<endl;
+            cout<<endl<<"  > No. HP        : "<<info(C).no_hp<<endl;
+            cout<<endl<<"  > Alamat        : "<<info(C).alamat<<endl<<endl;
             cout<<"|========================================================================|"<<endl;
             C = next(C);
         }while (C != NULL);
@@ -205,16 +207,5 @@ void deleteByID(list_child &LC,address_child &P){
             prec = next(prec);
         }
         deleteAfter(LC,prec,P);
-    }
-}
-
-void edit_data(list_child &LC, address_child C, infotype_child y){
-
-    if (C != NULL){
-        info(C).nama = y.nama;
-        info(C).usia = y.usia;
-        info(C).jk = y.jk;
-        info(C).spesialis = y.spesialis;
-        info(C).no_hp = y.no_hp;
     }
 }
