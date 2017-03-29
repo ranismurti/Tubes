@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1490651112 source:c:\users\rani\documents\tubes\aplikasi.cpp
+1490666458 source:c:\users\rani\documents\tubes\aplikasi.cpp
 	"aplikasi.h"
 
 1490651112 c:\users\rani\documents\tubes\aplikasi.h
@@ -10,34 +10,39 @@
 	"pasien.h"
 	"relasi.h"
 
-1490664573 c:\users\rani\documents\tubes\dokter.h
+1490666459 c:\users\rani\documents\tubes\dokter.h
 	<iostream>
 
-1490651112 c:\users\rani\documents\tubes\pasien.h
+1490666459 c:\users\rani\documents\tubes\pasien.h
 	<iostream>
 
-1490625055 c:\users\rani\documents\tubes\relasi.h
+1490666459 c:\users\rani\documents\tubes\relasi.h
 	<iostream>
 	"pasien.h"
 	"dokter.h"
 
-1490629445 source:c:\users\rani\documents\tubes\dokter.cpp
+1490666459 source:c:\users\rani\documents\tubes\dokter.cpp
 	"dokter.h"
 
 1490627900 source:c:\users\rani\documents\tubes\main.cpp
 	<iostream>
 	"aplikasi.h"
 
-1490651112 source:c:\users\rani\documents\tubes\pasien.cpp
+1490666459 source:c:\users\rani\documents\tubes\pasien.cpp
 	"pasien.h"
 
-1490651112 source:c:\users\rani\documents\tubes\relasi.cpp
+1490666459 source:c:\users\rani\documents\tubes\relasi.cpp
 	"relasi.h"
 
-1490717662 source:e:\tubes\aplikasi.cpp
+1490666459 D
+
+1490797018 source:e:\tubes\aplikasi.cpp
 	"aplikasi.h"
 
-1490715995 e:\tubes\aplikasi.h
+1490665453 gin/master
+	"aplikasi.h"
+
+1490796576 e:\tubes\aplikasi.h
 	<cstdlib>
 	<stdlib.h>
 	<conio.h>
@@ -46,27 +51,27 @@
 	"pasien.h"
 	"relasi.h"
 
-1490712435 e:\tubes\dokter.h
+1490796750 e:\tubes\dokter.h
 	<iostream>
 
-1490712314 e:\tubes\pasien.h
+1490796750 e:\tubes\pasien.h
 	<iostream>
 
-1490714737 e:\tubes\relasi.h
+1490796642 e:\tubes\relasi.h
 	<iostream>
 	"pasien.h"
 	"dokter.h"
 
-1490716633 source:e:\tubes\dokter.cpp
+1490796750 source:e:\tubes\dokter.cpp
 	"dokter.h"
 
 1490630496 source:e:\tubes\main.cpp
 	<iostream>
 	"aplikasi.h"
 
-1490717128 source:e:\tubes\pasien.cpp
+1490796750 source:e:\tubes\pasien.cpp
 	"pasien.h"
 
-1490714420 source:e:\tubes\relasi.cpp
+1490796615 source:e:\tubes\relasi.cpp
 	"relasi.h"
 

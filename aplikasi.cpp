@@ -398,6 +398,8 @@ void hapus_relasi(list_relasi &LR,list_child LC, list_parent LP){
     cout<<endl;
     C = findByID(LC,y);
     P = findByID(LP,x);
+    cout<<info(C).id<<endl;
+    cout<<info(P).id<<endl;
     if (C != NULL && P !=NULL)
     {
         R = findByID(LR,P,C);
